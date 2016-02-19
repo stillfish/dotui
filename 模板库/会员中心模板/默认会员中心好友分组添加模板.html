@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content='{PE.Label id="取得META信息" siteConfig="true" metaType="keywords" /}'
+        name="Keywords" />
+    <meta content='{PE.Label id="取得META信息" siteConfig="true" metaType="description" /}'
+        name="Description" />
+    <title>会员中心-{PE.Control.PageTitle/}</title>
+    <link href="{PE.SiteConfig.SkinPath/}user/default.css" rel="stylesheet" type="text/css" />
+    <link href="{PE.SiteConfig.SkinPath/}user/model.css" rel="stylesheet" type="text/css" />
+    {PE.Label ID="公共脚本"/}
+</head>
+<body>
+    <div class="wrapper">
+        <!--网站内容开始-->
+        <div class="user_main_all">
+            {PE.Label ID="会员中心顶部"/}
+            <!--会员主体定义开始-->
+            <div class="user_main">
+                {PE.Label ID="会员中心边侧栏"/}
+                <!--右侧定义框架开始 -->
+                <div class="user_summary">
+                    <!--您现在的位置开始-->
+                    <div class="user_sitepath">
+                        您现在的位置：{PE.Control.YourPosition/}</div>
+                    <!--您现在的位置结束-->
+                    <!--信息列表开始-->
+                    {PE.Control.MainForm}
+                    <div class="model_content_wrap">
+                        <div class="model_info_one">
+                            {PE.Control.LblTitle/}
+                        </div>
+                        <div class="model_info_content">
+                            <table width="100%" border="0" cellspacing="1" cellpadding="0" class="table_style">
+                                <tr class="first">
+                                    <td class="ok_tab" style="width: 40%;">
+                                        {PE.Control.Localize11/}
+                                    </td>
+                                    <td>
+                                        {PE.Control.TxtGroupName/}&nbsp;&nbsp;{PE.Control.ValrGroupName/}{PE.Control.ValeGroupName/}
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="ok_bottom">
+                                {PE.Control.BtnSubmit/}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{PE.Control.BtnCancell/}
+                            </div>
+                        </div>
+                    </div>
+                    {/PE.Control.MainForm}
+                    <!--信息列表结束-->
+                </div>
+                <!--右侧定义框架结束 -->
+                <div class="clear">
+                </div>
+            </div>
+            <!--会员主体定义结束-->
+        </div>
+    </div>
+    {PE.Label ID="会员中心底部"/}
+</body>
+</html>

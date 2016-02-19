@@ -1,0 +1,172 @@
+﻿@charset "utf-8";
+
+/*
+会员注册/登录；
+*/
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, table, th, td{margin: 0;    padding: 0;}
+address, caption, cite, code, dfn, em, th, var{font-style: normal;    font-weight: normal;}
+ul, li{list-style-type: none;}
+div, dl, dt, dd, ul, ol, li{ zoom:1; }
+img{border: none;}
+input, textarea{font-family: inherit;    font-size: inherit;    font-weight: inherit;}
+input{vertical-align: middle;}
+body{ color: #333;    font: 12px 宋体, arial, helvetica, sans-serif;}
+a{color: #333;    text-decoration: none;}
+a:hover{color: #cc0000;    text-decoration: none;}
+.clearbox{clear: both;}
+
+/* 主控 */
+.wrapper{margin: 0 auto;padding: 0px;overflow: hidden;}
+
+/* userPanel */
+.userPanel {height:35px;background: #1C80BC; line-height:35px; color:#fff;font-size:14px;}
+.userPanel a {margin:0 5px; color:#fff;}
+.userPanel a:hover {color:#ff0;text-decoration:underline;}
+.userPanelIn{width:980px;margin:0 auto; text-align:right;  }
+
+/* header */
+#header {width:980px;margin:auto;padding:25px 0 }
+#logo {}
+
+/* ？ */
+.logoBar em{ background-position:-238px 0; width:70px;  }
+.reg_sitepath,.registercheck {height:41px;line-height:41px;border-bottom:1px solid #ddd;}
+.user_line {display:none; height:20px;line-height:20px;background:url(images/register_line.gif) repeat-x left center;margin:0px 20px;}
+.service {margin-top:15px;color:#444444;height:32px;line-height:32px;text-align:center;}
+.logoBar em{ background-position:-305px 0; width:136px;  }
+
+/* 布局 */
+.userLoginWrap{ overflow:hidden; zoom:1;width:980px;margin:auto;font-size:14px;}
+.userLoginWrap input{ height:24px; line-height:24px; font-size:14px; border:1px solid #ccc; background:#fff;   }
+
+.notice{ padding:15px;  border:1px solid #e3e3e3;  overflow:hidden;margin:0 0  20px 0; font-size:14px;}
+.notice a{ margin-left:10px; color:#c00;   }
+	
+.loginCon{ width:660px; float:left; border-right:1px dotted #d8d8d8;    }
+.loginCon #user_main li{ padding:10px 0; zoom:1; }
+.loginCon #user_main li.login{ padding-left:85px;  }
+.loginCon #user_main label{ width:80px; text-align:right; display:inline-block; *display:inline; zoom:1;  }
+.loginCon #user_main input{ width:300px;  }
+.loginCon #user_main #BtnLogin{ width:110px; height:35px;  }
+.loginCon .user_login_info{ display:none;  }
+
+/* 登录模块 */
+#user_login #user_main ul{margin:0 0 0 80px; }
+.regCon{ width:190px; float:left; padding:50px 0 0 30px;   }
+.regCon span a{ color:#c00;  }
+.regCon .loginBtn{ display:block; width:110px; height:35px; line-height:35px;text-align:center; font-weight:bold; background:url("images/userSplit.gif") 0 -165px;margin-top:20px;    }
+.regCon .loginBtn:hover{background-position:-110px -165px; }
+.user_password a{font-size:12px;margin:0 0 0 20px ;color:#999; }
+
+
+/* 注册模块 */
+.regCon{ width:190px; float:left; padding:50px 0 0 30px;   }
+.regCon span a{ color:#c00;  }
+.regCon .regBtn{ display:block; width:110px; height:35px;  line-height:35px;text-align:center; font-weight:bold;color:#fff;background:url("images/userSplit.gif") 0 -230px; margin-top:20px;    }
+
+/*  */
+fieldset {border:none;background:none;}
+legend {display:none;}
+
+/* 其他页面框架  */
+.reg_flow {margin:0px auto;width:800px; padding-bottom:30px;overflow:hidden;}
+.reg_input {padding-left:130px;clear:both;margin:10px 0px 15px 0;overflow:hidden}
+.reg_input .tdbg,.reg_input .tdbgleft {background:none;}
+
+/* 状态提示 */
+#PnlRegStep2 .reg_input div { overflow: hidden; clear: both;display:none;font-size:12px; padding:7px 0 2px 0; }
+#PnlRegStep2 .reg_input div div{display:block; }
+#PnlRegStep2 .reg_input .d_err,
+#PnlRegStep2 .reg_input .d_ok,
+#PnlRegStep2 .reg_input .d_on {color: #f60; display:block !important;   }
+#PnlRegStep2 .reg_input .d_ok { color: #690; }
+#PnlRegStep2 .reg_input .d_on{color:#999;}
+
+/* 字段-地区 */
+#TRRegion {height:80px!important;position:relative;overflow:hidden;}
+#TRRegion div{display:block !important; }
+#Region_UpnlRegion {height:80px;position:absolute;top:-20px;left:130px;display:block; }
+#Region_UpnlRegion td{text-align:right; }
+#Region_UpnlRegion .tdbgleft {line-height:24px;text-align:left; }
+#Region_DropProvince {margin:2px}
+
+input.inputxt {height:20px!important;line-height:20px!important;}
+.reg_input label {float:left;width:130px;margin-left:-130px;text-align:right;padding-top:8px;font-size:14px;}
+.reg_input input { height:24px; line-height:21px; font-size:14px; border:1px solid #ccc;width:300px;float:left;padding:4px 0 0  2px; }
+.reg_contant  {height:auto!important;}
+
+
+/* 必填信息 */
+#TableRegisterMust {padding-top:15px;}
+#TableRegisterMust div {clear:both;}
+
+#CheckUserName2 {width:120px;height:24px;padding:4px 10px 11px 5px;font-size:12px;text-align:center;margin-left:10px;}
+.reg_input div {margin-top:5px; font-size:12px;}
+.reg_input div.d_err {color:#ff0000;}
+.reg_input input.input_onFocus{}
+#InterMessageUserName.d_on {}
+#CheckUserNameMessage.d_ok {}
+
+/* 选填信息 */
+#TableRegisterSelect div {clear:both;}
+#TrVcodeRegister input {width:75px;}
+#TrVcodeRegister img {margin-left:5px;margin-top:2px;display:block;width:69px;height:20px;float:left;display:inline;}
+#TRSwicthSelectFill {height:33px;line-height:33px;padding-left:65px;}
+#TRSwicthSelectFill { height: 30px; line-height: 30px;}
+#TRSwicthSelectFill *{vertical-align: middle !important;}
+#TRSwicthSelectFill label { width: 130px; text-align: right; display: inline-block; }
+#TRSwicthSelectFill label.checkbox { width: auto; border:none !important;}
+#TRSwicthSelectFill label.checkbox input{ width: auto; border:none !important;}
+
+/* 注册按钮 注册协议  */
+.reg_protocol{overflow:hidden;}
+.reg_protocol .agree { padding:2px 0 2px 130px; }
+.reg_protocol .agree .tips{height:30px;color:#999; }
+.reg_protocol .regImprove { padding-left: 130px; margin-bottom: 10px; }
+.provision { margin-left: 130px; width: 600px; height: 100px; font-size:12px;line-height:20px; padding: 5px 10px;color:#999; }
+.ok_info{height:30px;padding:0 0 0 130px;color:#999  }
+.reg_improve{height:30px;padding:0 0 10px 130px;  color:#999}
+#PnlRegStep2 textarea {padding:10px;line-height:180%;}
+#TRSign textarea {margin-left:0px;}
+.ok_info {color:#cc0000;}
+.ok_info,.reg_improve{ font-size:12px;  text-align:left;padding-left:130px;height:32px;line-height:32px;clear:both;}
+.agree input{ float:left;margin-right:10px;_display:inline; width:110px; height:35px; background:url("images/userSplit.gif") 0 -80px; border:0; cursor:pointer; text-indent:-9999px; overflow:hidden;  }
+.agree #Reset{background-position:-110px -80px; }
+
+/*  */
+#PnlRegStep2 .reg_fix{display:block; height:30px; font-size:12px;color:#0583D0;}
+#PnlRegStep2 #TxtTrueName{width:120px; }
+#PnlRegStep2 #TxtValidateCode{width:90px; }
+#PnlRegStep2 #TxtZipCode{width:90px; }
+#PnlRegStep2 textarea {line-height:20px !important;padding:10px !important;  }
+
+/* 忘记密码 */
+.forget_password {}
+.password_list {width:450px;margin:0 auto;padding:30px 0 0 0px;}
+.password_list .password_list{padding:0; }
+.password_list h2 {height:50px;line-height:40px;font-family:"微软雅黑";font-size:18px;}
+.password_list ul {}
+.password_list li {height:40px;line-height:40px;padding-left:130px;overflow:hidden;position:relative;}
+.password_list li.Validatecode span#ValrValidateCode{padding-left:80px;}
+.password_list li  label{width:130px;margin-left:-130px;height:24px;line-height:24px;text-align:right;font-size:14px;float:left;}
+.password_list li span {padding-left:5px;}
+.password_list li input {float:left;;border:1px solid #ccc;height:24px;width:180px; }
+.password_list li.push_button {padding-left:135px;margin-top:10px;}
+.password_list li.push_button input {width:110px;height:35px;line-height:35px;text-align:center; font-weight:bold; display:inline-block;background:url(images/userSplit.gif) no-repeat  0 -165px;border:none;cursor: pointer;}
+.password_list li.password_area input {height:15px;margin-top:5px;width:auto; }
+.password_list li.password_area span label {margin-left:0px;padding-left:0px;width:100px;text-align:left;}
+.password_list li img {margin-left:10px;margin-bottom:5px;vertical-align:middle;}
+.password_list #btnSendEmail{padding:4px 20px; height:35px;line-height:35px;  }
+
+
+/* 注册认证 */
+.registercheck_list {}
+
+
+/* footer */
+#footer {width:980px; margin:30px auto; text-align:center; background:#f7f7f7;  padding:10px;line-height:23px;    }
+#copyright {color:#444444;font-family:Arial;line-height:24px;padding-top:20px;text-align:center;}
+
+
+

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content='{PE.Label id="取得META信息" siteConfig="true" metaType="keywords" /}' name="Keywords" />
+<meta content='{PE.Label id="取得META信息" siteConfig="true" metaType="description" /}' name="Description" />
+<title>{PE.Control.PageTitle/}-会员中心</title>
+<link href="{PE.SiteConfig.SkinPath/}user/member.css" rel="stylesheet" type="text/css" />
+{PE.Label id="公共脚本" /}
+</head>
+<body>
+    {PE.Label id="会员注册登录顶部" /}
+    <div class="reg_flow ">
+        <div class="reg_sitepath registercheck">
+            您现在的位置：<a href="{PE.SiteConfig.SitePath/}">{PE.SiteConfig.SiteName/}</a> >> 注册认证</div>
+        <div class="reg_contant clear">
+            {PE.Control.MainForm}
+            <div class="password_list registercheck_list">
+                <ul>
+                    <li>
+                        <label>
+                            {PE.Control.Localize4/}
+                        </label>
+                        {PE.Control.TxtUserName/} </li>
+                    <li>
+                        <label>
+                            {PE.Control.Localize5/}
+                        </label>
+                        {PE.Control.TxtPassword/} </li>
+                    <li>
+                        <label>
+                            {PE.Control.Localize6/}
+                        </label>
+                        {PE.Control.TxtCheckNum/} </li>
+                    <li class="push_button">{PE.Control.BtnRegCheck/} </li>
+                </ul>
+            </div>
+            {/PE.Control.MainForm}
+        </div>
+    </div>
+    {PE.Label id="会员注册登录底部" /}
+</body>
+</html>

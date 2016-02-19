@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content='{PE.Label id="取得META信息" siteConfig="true" metaType="keywords" /}' name="Keywords" />
+    <meta content='{PE.Label id="取得META信息" siteConfig="true" metaType="description" /}' name="Description" />
+    <title>{PE.Control.PageTitle/}</title>
+    <link href="{PE.SiteConfig.SkinPath/}user/model.css" rel="stylesheet" type="text/css" />
+    {PE.Label id="匿名投稿-样式判断" nodeId="@RequestInt_NodeID"/}
+    {PE.Label id="公共脚本" /}
+    <style type="text/css">
+    #menubox em { font-weight:bold; }
+    #menubox ul { margin-top:-1px; }
+    .wrapper select { height:auto; }
+    .anonymouscontent_top { display: none; }
+    .input_button_five { display: none; }
+    </style>
+</head>
+<body>
+
+    {PE.Label id="匿名投稿-网站顶部" nodeId="@RequestInt_NodeID"/}
+
+    <div id="content">
+        <div class="wrapper mtop10" style="width:auto">
+            {PE.Control.MainForm/}
+        </div>
+    </div>
+
+    {PE.Label id="匿名投稿-网站底部" nodeId="@RequestInt_NodeID"/}
+
+</body>
+</html>

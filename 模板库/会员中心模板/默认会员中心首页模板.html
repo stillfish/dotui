@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content='{PE.Label id="取得META信息" siteConfig="true" metaType="keywords" /}' name="Keywords" />
+    <meta content='{PE.Label id="取得META信息" siteConfig="true" metaType="description" /}' name="Description" />
+    <title>会员中心</title>
+    <link href="{PE.SiteConfig.SkinPath/}user/default.css" rel="stylesheet" type="text/css" />
+    <link href="{PE.SiteConfig.SkinPath/}user/model.css" rel="stylesheet" type="text/css" />
+    {PE.Label ID="公共脚本"/}
+</head>
+<body>
+    <div class="wrapper">
+        <!--网站内容开始-->
+        <div class="user_main_all">
+            {PE.Label ID="会员中心顶部"/}
+            <!--会员主体定义开始-->
+            <div class="user_main">
+                {PE.Label ID="会员中心边侧栏"/}
+                <!--右侧定义框架开始 -->
+                <div class="user_summary">
+                    <!--会员信息开始-->
+                    <div class="user_infomation">
+                        <div class="user_info_title">
+                        </div>
+                        <div class="usrer_info_content">
+                            <!--会员头像开始-->
+                            <div class="user_photo">
+                               <a href="{PE.SiteConfig.ApplicationPath/}User/Info/ModifyInfo.aspx?Action=Modify&AvatarModify=true" title="修改头像"><img class="bigAvatar" src="{PE.ViewData.UserBigAvatar/}" alt="会员头像" align="absmiddle" /></a>
+                            </div>
+                            <!--会员头像结束-->
+                            <!--会员信息展示开始-->
+                            <div class="user_article">
+                                <h1>
+                                    {PE.ViewData.UserName/}</h1>
+                                <ul class="user_acconun">
+                                    <li>资金余额：<span>{PE.ViewData.UserBalance/}元</span></li>
+                                    <li>可用积分：<span>{PE.ViewData.UserExp/}分</span></li>
+                                    <li>可用{PE.ViewData.PointName/}：<span>{PE.ViewData.UserPoint/}{PE.ViewData.PointUnit/}</span></li>
+                                    <li>加入时间：<span>{PE.ViewData.UserJoinTime/}</span></li>
+                                    <li>注册时间：<span>{PE.ViewData.UserRegTime/}</span></li>
+                                    <li>最后登录IP：<span>{PE.ViewData.LastLoginIP/}</span></li>
+                                </ul>
+                                <!--会员快捷工具栏开始-->
+                                <ul class="user_info_tools">
+                                    <li><span><a href="Info/ModifyInfo.aspx?Action=Modify" title="修改信息">修改信息</a></span></li><li>
+                                        <span><a href="Info/Password.aspx" title="修改密码">修改密码</a></span></li><li><span><a
+                                            href="Info/ShowPermissions.aspx" title="我的权限">我的权限</a></span></li>
+                                </ul>
+                                <!--会员快捷工具栏结束-->
+                            </div>
+                            <!--会员信息展示结束-->
+                            <div class="clear">
+                            </div>
+                        </div>
+                        <div class="user_info_bottom">
+                        </div>
+                    </div>
+                    <!--会员信息结束-->
+                    <div class="clear">
+                    </div>
+                    <!--会员自定义窗口开始-->
+                    {PE.Control.UserWidgetShow/}
+                    <!--会员自定义窗口结束-->
+                </div>
+                <!--右侧定义框架结束 -->
+                <div class="clear">
+                </div>
+            </div>
+            <!--会员主体定义结束-->
+            <!--网站内容结束-->
+        </div>
+    </div>
+    {PE.Label ID="会员中心底部"/}
+</body>
+</html>

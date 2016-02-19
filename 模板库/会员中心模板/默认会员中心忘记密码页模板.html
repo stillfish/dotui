@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content='{PE.Label id="取得META信息" siteConfig="true" metaType="keywords" /}' name="Keywords" />
+<meta content='{PE.Label id="取得META信息" siteConfig="true" metaType="description" /}' name="Description" />
+<link href="{PE.SiteConfig.SkinPath/}user/member.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{PE.SiteConfig.ApplicationPath/}js/jquery.pack.js"></script>
+<title>{PE.Control.PageTitle/}-会员中心</title>
+</head>
+
+
+<body>
+<div class="wrapper">
+<!--网站顶部开始-->
+{PE.Label id="会员注册登录顶部" /}
+<!--网站顶部结束-->
+
+<div class="reg_flow mtop10">
+<div class="reg_sitepath forget_password">
+您现在的位置：<a href="{PE.SiteConfig.SitePath/}">{PE.SiteConfig.SiteName/}</a> >> 忘记密码</div>
+<div class="reg_contant clear">
+<div class="password_list">
+{PE.Control.MainForm} {PE.Control.PnlStep1}
+<ul>
+<li><label>请输入用户名：</label>{PE.Control.TxtUserName/}{PE.Control.ValrTxtUserName/}</li>
+<li class="password_area">
+<label>
+请选择找回方式：</label><span>{PE.Control.rBtnQA/}{PE.Control.rBtnEmail/}</span></li>
+<li class="push_button">{PE.Control.BtnStep1/}</li>
+</ul>
+{/PE.Control.PnlStep1} {PE.Control.PnlSendToEmail}
+<h2>请选择密码类型</h2>
+<ul>
+<li class="password_area"><label>请选择密码类型：</label>{PE.Control.RadPwdType/}</li>
+<li>
+{PE.Control.btnSendEmail/}</li>
+</ul>
+{/PE.Control.PnlSendToEmail} {PE.Control.PnlStep2}
+<div class="password_list">
+<ul>
+<li><label>密码问题：</label>{PE.Control.LitQuestion/}</li>
+<li><label>请输入问题答案：</label>{PE.Control.TxtAnswer/}</li>
+<li class="Validatecode"><label>请输入验证码：</label>{PE.Control.TxtValidateCode/}{PE.Control.VcodeLogOn/}</li>
+{PE.Control.PnListPwdType/}
+<li class="push_button">{PE.Control.BtnStep2/}</li>
+</ul>
+</div>
+{/PE.Control.PnlStep2} {PE.Control.PnlStep3}
+<div class="password_list">
+<h1>
+请修改登录密码</h1>
+<table>
+<tr>
+<td class="right">
+密 码：
+</td>
+<td colspan="2" class="left">
+{PE.Control.TxtPassword/} {PE.Control.RegularExpressionValidatorPassword/}{PE.Control.RequiredTxtPassword/}
+</td>
+</tr>
+<tr>
+<td class="right">
+确认密码：
+</td>
+<td colspan="2" class="left">
+{PE.Control.TxtConfirmPassword/} {PE.Control.RequiredTxtConfirmPassword/} {PE.Control.CompareValTxtConfirmPassword/}
+</td>
+</tr>
+<tr>
+<td colspan="3">
+{PE.Control.BtnStep3/}
+</td>
+</tr>
+</table>
+</div>
+{/PE.Control.PnlStep3} {PE.Control.PalChangePayPassword}
+<div class="password_list">
+<h1>
+请修改预付款支付密码</h1>
+<table>
+<tr>
+<td class="right">
+密 码：
+</td>
+<td colspan="2" class="left">
+{PE.Control.txtNewPayPassword/} {PE.Control.RegNewPayPassword/}{PE.Control.RequiredtxtNewPayPassword/}
+</td>
+</tr>
+<tr>
+<td class="right">
+确认密码：
+</td>
+<td colspan="2" class="left">
+{PE.Control.txtConfirmNewPayPassword/} {PE.Control.RequiredtxtConfirmNewPayPassword/} {PE.Control.CompNewPayPassword/}
+</td>
+</tr>
+<tr>
+<td colspan="3">
+{PE.Control.btnChangePayPassword/}
+</td>
+</tr>
+</table>
+</div>
+{/PE.Control.PalChangePayPassword} {/PE.Control.MainForm}
+</div>
+</div>
+</div>
+
+
+{PE.Label id="会员中心底部"/}
+</body>
+</html>
+
+

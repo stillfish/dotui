@@ -1,0 +1,216 @@
+﻿{PE.DataSource id="cone" datasource="图片_内容页" itemId="@RequestInt_id" xslt="true" /}
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta content="{PE.Field id='cone' fieldname='Keyword' /}" name="keywords">
+    <meta content="{PE.Field id='cone' fieldname='Intro' /}" name="description">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>{PE.Field id="cone" fieldname="Title" /} - {PE.SiteConfig.SiteTitle/}</title>
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}photoatlas.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}module.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}default.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}page.css">
+    <script src="{PE.SiteConfig.ApplicationPath /}js/jquery.pack.js"></script>
+    <script src="{PE.SiteConfig.ApplicationPath /}js/sinaflash.js"></script>
+    <script src="{PE.SiteConfig.ApplicationPath /}js/epidiascope.js"></script>
+</head>
+<body>
+
+    {PE.Label id="网站顶部" currentId="{PE.Field id="cone" fieldname="NodeID" /}" /}
+
+    <div id="content">
+        <div class="path">{PE.Label id="位置导航" currentId="{PE.Field id="cone" fieldname="NodeID" /}" /}</div>
+
+        <div id="picShow">
+            <div class="pic-header">
+                <div class="fl">
+                    <div class="title" id="d_picTit"></div>
+                    <div class="date" id="d_picTime"></div>
+                </div>
+                <div class="fr">
+                    <a href="javascript:;" class="share J_share"></a>
+                    <a href="javascript:;" id="ecbMode" title="列表模式(tab)"></a>
+                    <a href="javascript:;" id="ecbModeReturn" title="返回幻灯模式(tab)"></a>
+                    <div style="display:none">
+                        <div id="ecbFullScreen" title="点击全屏获得更好观看效果">
+                            <div class="buttonCont" id="fullScreenFlash"></div>
+                        </div>
+                        <div id="ecbSpeed">
+                            <div id="ecbSpeedInfo" class="buttonCont">5秒</div>
+                        </div>
+                        <div id="ecbPre" title="上一张">
+                            <div class="buttonCont"></div>
+                        </div>
+                        <div id="ecbPlay">
+                            <div id="ecpPlayStatus" class="play"></div>
+                        </div>
+                        <div id="ecbNext" title="下一张">
+                            <div class="buttonCont"></div>
+                        </div>
+                        <div id="ecbLine">
+                            <div class="buttonCont"></div>
+                        </div>
+                        <div id="SpeedBox">
+                            <div id="SpeedCont">
+                                <div id="SpeedSlide"></div>
+                                <div id="SpeedNonius"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:none">
+                        {PE.Label id="分享按钮" /}
+                    </div>
+                    <script>$('.J_share').click(function(){$('.bds_more').click()})</script>
+                </div>
+            </div>
+            <div class="pic-body">
+                <div id="eFramePic">
+                    <div id="efpBigPic">
+                        <div id="efpClew"></div>
+                        <div id="d_BigPic"></div>
+                        <a id="efpLeftArea" class="arrLeft" title="上一张"><span></span></a>
+                        <a id="efpRightArea" class="arrRight" title="下一张"><span></span></a>
+                        <!-- endSelect begin -->
+                        <div id="endSelect">
+                            <div id="endSelClose"></div>
+                            <div class="bg"></div>
+                            <div class="E_Cont">
+                                <p>您已经浏览完所有图片</p>
+                                <p><a href="javascript:void(0)" id="rePlayBut"></a><a href="javascript:void(0)" id="nextPicsBut"></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="ePicList"></div>
+            </div>
+            <div class="pic-nav">
+                <div id="efpPicList">
+                    <div id="efpPreGroup">
+                        <div id="efpPrePic" onmouseover="this.className='selected'" onmouseout="this.className=''">
+                            <table cellspacing="0">
+                                <tr>
+                                    <td><a href=""> <img src="" alt="" title="" border="0" /></a></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="efpPreTxt"><a href="" title="上一图集">&lt;&lt;上一图集</a></div>
+                    </div>
+                    <div id="efpInfo">
+                        <div id="efpListLeftArr" onmouseover="this.className='selected'" onmouseout="this.className=''"> </div>
+                        <div id="efpPicListCont"> </div>
+                        <div id="efpListRightArr" onmouseover="this.className='selected'" onmouseout="this.className=''"> </div>
+                    </div>
+                    <div id="efpNextGroup">
+                        <div id="efpNextPic" onmouseover="this.className='selected'" onmouseout="this.className=''">
+                            <table cellspacing="0" style="width:100%;">
+                                <tr>
+                                    <td><a href=""> <img src="" alt="" title="" border="0" /></a></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="efpNextTxt"><a href="" title="下一图集">下一图集&gt;&gt;</a></div>
+                    </div>
+                    <div class="clearBox"></div>
+                </div>
+            </div>
+            <div class="pic-intro">
+                <div id="total">(<span class="cC00">0</span>/0)</div>
+                <div class="text" id="d_picIntro">暂无简介</div>
+            </div>
+             <div class="pic-content">
+                {PE.Field id="cone" fieldname="PhotoIntro"/}
+             </div>
+        </div>
+
+    </div>
+
+    {PE.Label id="网站底部" /}
+
+    <script type="text/javascript">
+            var dataInfo = {
+                title: '{PE.Field id="cone" fieldname="Title" /}'
+            };
+
+            function echoFocus() {
+                var _url = '{PE.SiteConfig.ApplicationPath/}Common/GetSlideData.aspx?nodeId={PE.Field id="cone" fieldname="NodeID" /}&itemId={PE.Field id="cone" fieldname="ItemID" /}';
+                getData.curUrl = _url;
+                sina._getJsData(_url,getData.fillData);
+            };
+
+            function fullFlash(txt, pic) {
+                var flashurl = "{PE.SiteConfig.SkinPath/}swf/image_player.swf";
+                var fullScreen = new sinaFlash(flashurl, "fullScreenObj", "100%", "100%", "8", "#000000");
+                fullScreen.addParam("quality", "best");
+                fullScreen.addParam("wmode", "transparent");
+                fullScreen.addParam("allowFullScreen", "true");
+                fullScreen.addParam("allowScriptAccess", "always");
+                fullScreen.addVariable("mylinkpic", pic); 	//此处添加组图标题
+                fullScreen.addVariable("infotxt", dataInfo.title);
+                //此处添加图片文字标题，导语，分别用"|"，"#"分割
+                fullScreen.addVariable("mytxt", txt);
+                fullScreen.addVariable("fulls_btnx", "0");
+                fullScreen.addVariable("fulls_btny", "0");
+                fullScreen.addVariable("fulls_btnalpha", "0")
+                fullScreen.write("fullScreenFlash");
+            };
+            function getFullScreenFlash() {
+                if (sina.isIE) {
+                    return sina.$('fullScreenFlash').getElementsByTagName('object')[0];
+                } else {
+                    return sina.$('fullScreenFlash').getElementsByTagName('embed')[0];
+                };
+            };
+            function flash_to_js(name) {
+                name = new String(name);
+                var status = name.split("|");
+                epidiascope.speedBar.setGrade(status[1]);
+                epidiascope.select(parseInt(status[0]));
+            };
+            function js_to_flash() {
+                epidiascope.stop();
+                return epidiascope.selectedIndex + "|" + epidiascope.speedBar.grade;
+            };
+            function errorFocus(str) {//错误
+                document.getElementById("d_picTit").innerHTML = str;
+                document.getElementById("d_BigPic").innerHTML = '<img src="http://image2.sina.com.cn/home/ddt/images/err02.gif" alt="' + str + '" />';
+            };
+
+            function next_jstoflash() {
+                if (getData.nextUrl.length <= 0) {
+                    return;
+                } else {
+                    epidiascope.ImgObj1.src = "";
+                    sina._getJsData(getData.nextUrl, function () { getData.fillData(0); });
+                }
+            }
+            function pre_jstoflash() {
+                if (getData.preUrl.length <= 0) {
+                    return;
+                } else {
+                    epidiascope.ImgObj1.src = "";
+                    sina._getJsData(getData.preUrl, function () { getData.fillData(1) });
+                }
+            }
+
+            var sendT = {
+                getHeader: function () {
+                    return epidiascope.filmstrips[epidiascope.selectedIndex].title;
+                },
+                getFirstImgSrc: function () {
+                    return epidiascope.ImgObj1.src;
+                }
+            }
+
+            echoFocus();
+    </script>
+
+    <div style="display:none;">
+    <script type="text/JavaScript" language="JavaScript">
+    {PE.Label id="图片集主要Json数据" nodeId="{PE.Field id="cone" fieldname="NodeID" /}" itemId="{PE.Field id="cone" fieldname="ItemID" /}" /}
+    </script>
+    </div>
+
+</body>
+</html>

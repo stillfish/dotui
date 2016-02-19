@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>在线投票 - {PE.SiteConfig.SiteTitle/}</title>
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}module.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}default.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}page.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}vote.css">
+    {PE.Label id="公共脚本" /}
+</head>
+<body>
+
+    {PE.Label id="网站顶部"/}
+
+    <div id="content">
+        <div class="path">{PE.Label id="位置导航" /}&gt;<a href="{PE.SiteConfig.ApplicationPath/}vote/votelist.aspx">投票列表</a>&gt;<span>在线投票</span></div>
+        <div class="noSideContent">
+            <div class="cateHead">
+                <h3 class="cateName">在线投票</h3>
+            </div>
+            <div class="votePost">
+                 {PE.Label id="投票表单" VoteId="@RequestInt_id" /}
+            </div>
+        </div>
+    </div>
+    <!-- content e -->
+
+    {PE.Label id="网站底部"/}
+
+</body>
+</html>

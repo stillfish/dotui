@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="{PE.Label id="取得META信息" siteConfig="true" metaType="keywords" /}" name="Keywords" />
+<meta content="{PE.Label id="取得META信息" siteConfig="true" metaType="description" /}" name="Description"/>
+<title>全文检索-{PE.SiteConfig.SiteName /}</title>
+<link href="{PE.SiteConfig.SkinPath/}fullTextSearch/fullTextSearch.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+{PE.Control.form1}
+<div id="wrap"> 
+	<div id="topBar"><a href="{PE.SiteConfig.ApplicationPath /}">返回{PE.SiteConfig.SiteName /}</a>&gt;<a href="{PE.SiteConfig.ApplicationPath /}Search/Default.aspx">全文检索</a></div>
+	<!-- header S -->
+	<div id="header">
+			<h1 title="{PE.SiteConfig.SiteName /}" id="logo">全文检索</h1>
+			<div class="searchBar">
+				  {PE.Control.hlAdvance/}
+				  <div class="cate">{PE.Control.ltlCategory/}</div>
+				  <div class="searchCon">
+					{PE.Control.TxtKeyword/} {PE.Control.DrpType/} {PE.Control.BtnSearch/}
+				  </div>
+			</div>
+	</div>
+	<!-- header E -->
+
+	<!-- footer S -->
+	<div id="footer">
+		<p class="copyRight">{PE.SiteConfig.CopyRight /}</p>
+	</div>
+	<!-- footer E -->
+</div>
+{PE.Control.searchScript/}
+{/PE.Control.form1}
+
+
+</body>
+</html>
+

@@ -1,0 +1,100 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre, 
+form,fieldset,input,textarea,p,blockquote,th,td { padding: 0; margin: 0; } 
+fieldset,img { border: 0; } 
+address,caption,cite,code,dfn,em,strong,th,var,i { font-weight: normal; font-style: normal; } 
+ol,ul { list-style: none; } 
+caption,th { text-align: left; } 
+h1,h2,h3,h4,h5,h6 { font-weight: normal; font-size: 100%; } 
+q:before,q:after { content:''; } 
+abbr,acronym { border: 0; }
+
+/*-- All --*/
+body{ color:#333;font:12px Arial; text-align:center; }
+a{ color:#333; text-decoration:none; outline:none;}
+a:hover {color:#c00; text-decoration:underline; }
+
+*:focus {outline: none;}
+/* 布局 */
+#wrap{ text-align:center; }
+#topBar{ height:30px; line-height:30px; text-align:right;  padding:0 30px; color:#ccc; background: #085C91; }
+#topBar a{ margin:0 8px; text-decoration:none; color:#ccc;  height:30px; line-height:30px;display:inline-block;padding:0 4px; }
+#topBar a:hover{ color:#fff;background:#4c4c4c;   }
+#header{ padding:60px 0 30px 0; text-align:left; height:300px;  }
+#header h1{ text-align:center; height:80px; line-height:80px; font:normal 30px/80px "Microsoft YaHei"; _font-weight:bold; color:#086196;  }
+#header h1 a{ color:#086196;  }
+#content{ text-align:left;  }
+#footer{ color:#000; text-align:center; overflow:hidden;clear:both;  line-height:22px; }
+
+/* 搜索 */
+.searchBar{ margin:auto;  padding-top:0px; position:relative;text-align:center; width:570px;  }
+.cate{height:28px; line-height:28px; text-align:left; padding:0 0 0 10px;  }
+.cate a,.cate b{font-size:14px;margin:0 10px 0 0; }
+.cate a{color:#005599;text-decoration:underline; }
+.searchBar #hlAdvance{ position:absolute; right:10px; bottom:11px; color:#000; text-decoration:underline; z-index:10;  }
+.searchCon{width:570px; height:35px;  position:relative; background: url(images/fullTextSearch.png) 0 0 no-repeat; overflow:hidden;   }
+.searchCon #TxtKeyword{ position:absolute; top:3px; left:5px; height:23px; width:334px; padding:4px 0 0 0; border:0; background:#fff; font:16px Arial ;  color:#000;   }
+.searchCon #DrpType{ position:absolute; top:6px; right: 133px; border:0; background:#fff; font-size:14px; line-height:28px; color:#000;   }
+.searchCon #DrpType option{ display:block; margin:5px 0;  }
+.searchCon #BtnSearch{ position:absolute; top:0px; right:50px; border:0; height:35px; width:80px; overflow:hidden; background:none; cursor:pointer; text-indent:-999px; }
+
+/* 全文检索首页模板 --------------------------------- */
+#header{margin:0 auto;  overflow:hidden;  }
+
+
+/* 全文搜检搜索结果页 ---------------------------------------------- */
+.resultPage #wrap{ text-align:left; }
+.resultPage #header{ width:100%; text-align:left; border-bottom:1px solid #eeeeee; padding:10px 0 0 0; background:#f9f9f9;height:60px; overflow:hidden }
+.resultPage #header h1{ float:left; padding:10px 0 0 0; width:160px; height:35px; line-height:35px;  font-size:26px;  }
+.resultPage .searchBar{ float:left; padding:10px 0 0 0;  }
+.resultPage #content{ width:980px; padding:10px 0 0 0;  }
+.searchInfo{  padding:0 0 0 150px; height:50px;line-height:50px; border-bottom:1px solid #eeeeee; margin:0 0 20px 0;   }
+.searchList {  margin-left:160px;min-height:200px;}
+.searchList li{ padding-bottom:10px; line-height:18px; font-size:13px;}
+.searchList  li h2 a,.searchList h2 a:hover {font-size:16px; color:#00c; text-decoration:underline; line-height:28px;}
+.searchList  li h2 a:visited{color:#666;  }
+.searchList  li h2 a span{color:#c00; text-decoration:underline;background:#ff6; }/*定义标题关键字高亮样式(span)*/
+.searchList  li p{ display:block; line-height:18px;color:#000}
+.searchList  li p span{color:#c00;}/*定义简介内容关键字高亮样式(span)*/
+.searchList  li em{display:block; color:#008000; font-style:normal;}
+
+.resultPage .cate{width:140px;float:left; font-size:12px;overflow:hidden;height:auto; margin:0;padding:0;  }
+.resultPage .cate strong{float:left; padding:0 0 0 20px;height:30px; }
+.resultPage .cate b,.resultPage .cate a{float:left;width:100px; font-size:12px; padding:0 0 0 20px;margin:5px 0;  }
+.resultPage .cate b:hover,.resultPage .cate a:hover{ }
+.resultPage .cate b{color:#c00;font-weight:normal;background:#eee;border-left:3px solid #c00; }
+.resultPage .cate a{color:#000;text-decoration:none; }
+.resultPage .cate{}
+.resultPage .cate{}
+
+/* Pager */
+.pager { padding:20px 0; margin:0 0 0 160px;height:50px;  }
+.pager a,.pager span{display:block; float:left;margin-right:3px; height:28px; line-height:28px; }
+.pager a,.pager a:active  {display:block; float:left;border:1px solid #c5c5c5; color:#256bb8; padding:0 10px;}
+.pager a:hover {border:1px solid #1a4a80; text-decoration:none; color:#333;}
+.pager span.current {background:#256bb8; border:1px solid #256bb8; color:#fff; font-weight:bold; padding:0 10px; }
+.pager span.disabled {border:1px solid #c5c5c5;  padding:0 10px; color:#c0c0c0;}
+
+.resultPage #footer{ padding:20px 50px; margin-top:20px;  border-top:1px dotted #ddd; text-align:center;   }
+
+/* 搜不到结果提示 */
+.noData h3{ color:#f60; font-size:14px;  }
+.noData .suggest{  padding:10px; line-height:30px;    }
+.noData .suggest h6{ font-weight:bold; padding-bottom:5px;  }
+.noData .suggest p{ line-height:24px; padding-left:10px; color:#000;  }
+.noData .suggest p a{ color:#f60; text-decoration:underline;   }
+
+/* 全文检索高级搜索页模板 ---------------------------------------------- */
+.adPage #header{height:auto;  }
+.adPage #header h1{ padding:0; }
+.adPage #content{ width:660px; margin:0 auto; text-align:left; position:relative;  }
+.adPage .adList{ position:relative; padding:20px;  border: 4px solid #0186C4;  text-align:left; font-size:12px; -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px; }
+.adPage .adList li{ height:24px; line-height:24px; padding:7px 0;  }
+.adPage .adList li span{ display:inline-block; *display:inline; zoom:1; width:170px; text-align:right; padding-right:10px;  color:#000;  }
+.adPage .adList li input{ height:24px; line-height:24px; border:1px solid #ccc; background:#fff;   }
+.adPage .adList li.btns{ padding-left:183px;  }
+.adPage .adList li #btnSearch{ display:inline-block; *display:inline; zoom:1; width:84px; height:28px; line-height:28px; font-size:14px; text-align:center; background:url(images/fullTextSearch.png) 0 -68px no-repeat; overflow:hidden; 
+    border:0; cursor:pointer;}
+
+.adPage #footer{ padding:20px 0;  }

@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta content="{PE.Label id='取得META信息' nodeId='@RequestInt_Id' metaType='keywords' /}" name="keywords">
+    <meta content="{PE.Label id='取得META信息' nodeId='@RequestInt_Id' metaType='description' /}" name="description">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>{PE.Label id="取得节点名称" nodeId="@RequestInt_id" /} - {PE.SiteConfig.SiteTitle/}</title>
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}module.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}default.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}page.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}msg.css">
+    {PE.Label id="公共脚本" /}
+</head>
+<body>
+
+    {PE.Label id="网站顶部" /}
+
+    <div id="content">
+        <div class="listContent">
+            <div class="mainContent">
+                <div class="cateHead">
+                    <h3 class="cateName">{PE.Label id="取得节点名称" nodeId="@RequestInt_id" /}</h3>
+                    <div class="path">{PE.Label id="位置导航" /}</div>
+                </div>
+                <div class="writeBtnBar">
+                    <a href="{PE.SiteConfig.ApplicationPath/}Common/GuestWrite.aspx?id=@RequestInt_id&amp;modelId=21&amp;nodeId=@RequestInt_id" class="writeBtn" target="_blank">提交留言</a>
+                </div>
+
+                <div class="msgListWrap">
+                    {PE.Label id="留言列表信息_留言本方式" titleLength="46" outputQty="20" usePage="true" parentId="@RequestInt_id" eliteLevel="0" /}
+                </div>
+
+                <div class="page">{PE.Page id="url_方块样式分页" datasource="InfoList" unitname="条留言" /}</div>
+            </div>
+            <!-- mainContent e -->
+
+            <div class="side">
+                {PE.Label id="侧栏-栏目菜单" /}
+                {PE.Label id="侧栏-热门排行" /}
+            </div>
+            <!-- side e -->
+        </div>
+        <!-- listContent e -->
+    </div>
+    <!-- content e -->
+
+    {PE.Label id="网站底部" /}
+
+</body>
+</html>

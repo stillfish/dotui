@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="{PE.Label id="取得META信息" siteConfig="true" metaType="keywords" /}" name="Keywords" />
+<meta content="{PE.Label id="取得META信息" siteConfig="true" metaType="description" /}" name="Description"/>
+<title>全文检索-{PE.SiteConfig.SiteName /}</title>
+<link href="{PE.SiteConfig.SkinPath/}fullTextSearch/fullTextSearch.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="adPage">
+
+{PE.Control.form1}
+<div id="wrap"> 
+	<div id="topBar"><a href="{PE.SiteConfig.ApplicationPath /}">返回{PE.SiteConfig.SiteName /}</a>&gt;<a href="{PE.SiteConfig.ApplicationPath /}Search/Default.aspx">全文检索</a></div>
+	<!-- header S -->
+	<div id="header">
+			<h1 title="{PE.SiteConfig.SiteName /}" id="logo"><a href="{PE.SiteConfig.ApplicationPath /}search/Default.aspx">全文检索</a></h1>
+	</div>
+	<!-- header E -->
+
+	<!-- content S -->
+	<div id="content">
+			<ul class="adList">
+				<li><span>包含以下<em>全部</em>的关键词</span>{PE.Control.txtAnd/}</li>
+				<li><span>包含以下的<em>完整关键词</em></span>{PE.Control.txtAll/}</li>
+				<li><span>包含以下<em>任意一个</em>关键词</span>{PE.Control.txtOr/}</li>
+				<li><span><em>不包括</em>以下关键词</span>{PE.Control.txtNo/}</li>
+				<li><span>搜索<em>字段</em></span>{PE.Control.DrpType/}</li>
+				<li class="btns">{PE.Control.btnSearch/}</li>
+			</ul>
+	</div>
+	<!-- content E -->
+
+	<!-- footer S -->
+	<div id="footer">
+		<p class="copyRight">{PE.SiteConfig.CopyRight /}</p>
+	</div>
+	<!-- footer E -->
+</div>
+{/PE.Control.form1}
+
+
+</body>
+</html>

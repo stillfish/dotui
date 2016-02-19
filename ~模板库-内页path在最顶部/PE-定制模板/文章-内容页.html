@@ -1,0 +1,127 @@
+﻿{PE.DataSource id="cone" datasource="文章_内容页" itemId="@RequestInt_id" xslt="true" /}
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta content="{PE.Field id='cone' fieldname='Keyword' /}" name="keywords">
+    <meta content="{PE.Field id='cone' fieldname='Intro' /}" name="description">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>{PE.Field id="cone" fieldname="Title" /} - {PE.SiteConfig.SiteTitle/}</title>
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}module.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}default.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}page.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}commentary.css">
+    {PE.Label id="公共脚本" /}
+</head>
+<body>
+
+    {PE.Label id="网站顶部" currentId="{PE.Field id="cone" fieldname="NodeID" /}" /}
+
+    <div id="content">
+        <div class="showContent">
+            <div class="path">{PE.Label id="位置导航" currentId="{PE.Field id="cone" fieldname="NodeID" /}" /}</div>
+            <div class="mainContent">
+                <div class="cateHead">
+                    <h3 class="cateName">{PE.Label id="取得节点名称" nodeId="{PE.Field id="cone" fieldname="NodeID" /}" /}</h3>
+                </div>
+                <div class="articleCon">
+                    <h1 class="articleTitle">{PE.Field id="cone" fieldname="Title" /}</h1>
+                    <h2 class="subTitle">{PE.Field id="cone" fieldname="Subheading" /}</h2>
+                    <div class="property">
+                        <span>{PE.Field id="cone" fieldname="UpdateTime" /}</span>
+                        <span>浏览量:{PE.Field id="cone" fieldname="Hits" /} 次</span>
+                        <span><a href="#commentform">评论({PE.Field id="cone" fieldname="CommentAudited" /})</a></span>
+                        <span>来源: {PE.Field id="cone" fieldname="CopyFrom" /}</span>
+                        <span>作者: {PE.Field id="cone" fieldname="Author" /}</span>
+                        <span class="font_zoom J_font_zoom"><a href="javascript:;" class="small">小</a><a href="javascript:;" class="big">大</a></span>
+                        <span>{PE.Label id="转入后台编辑" ItemId="@RequestInt_id" /}</span>
+                    </div>
+
+                    {PE.Field id="cone" fieldname="DescriptionBox" /}
+
+                    <div class="conTxt">
+                        {PE.Field id="cone" fieldname="Content"  charge="true"  showerr="true" /}
+                        {PE.Field id="cone" fieldname="Vote"/}
+                    </div>
+
+                    <div class="page">
+                        {PE.Page id="内容分页" datasource="contentpage" span="span"/}
+                    </div>
+
+                    <div class="userControl clearfix">
+                        <div class="fl">
+                            <a class="print" target="_balnk" href="{PE.SiteConfig.applicationpath/}Print.aspx?id={PE.Field id="cone" fieldname="GeneralID" /}" title="打印文章">[打印文章]</a>
+                            <a class="fav" title="添加收藏" href="{PE.SiteConfig.applicationpath/}User/Content/Favorite.aspx?Action=add&Id={PE.Field id="cone" fieldname="GeneralID" /}">[添加收藏]</a>
+                        </div>
+                        <div class="fr">
+                            {PE.Label id="分享按钮" /}
+                        </div>
+                    </div>
+
+                    <div class="others">
+                        <div class="prev">{PE.Label id="上一篇" displayTips="true" displayDateTime="true" linkOpenType="2" itemId="@RequestInt_Id" nodeArray="{PE.Field id="cone" fieldname="NodeID" /}" /}</div>
+                        <div class="next">{PE.Label id="下一篇" displayTips="true" displayDateTime="true" linkOpenType="2" itemId="@RequestInt_Id" nodeArray="{PE.Field id="cone" fieldname="NodeID" /}" /}</div>
+                    </div>
+
+                    <div class="relation">
+                        <div class="hd"><h3 class="title">相关文章</h3></div>
+                        <div class="bd">
+                            <ul class="infoList infoListA">{PE.Label id="内容页相关信息" itemId="@RequestInt_id" outputQty="8" /}</ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- articleCon E -->
+
+                <div id="commentform"></div>
+                {PE.Label id="评论标签" nodeId="{PE.Field id="cone" fieldname="NodeID" /}" /}
+            </div>
+            <!-- mainContent e -->
+
+            <div class="side">
+                {PE.Label id="侧栏-栏目菜单" currentId="{PE.Field id="cone" fieldname="NodeID" /}" /}
+                {PE.Label id="侧栏-热门排行" currentId="{PE.Field id="cone" fieldname="NodeID" /}" /}
+            </div>
+            <!-- side e -->
+        </div>
+        <!-- showContent e -->
+    </div>
+    <!-- content e -->
+
+    {PE.Label id="网站底部" /}
+
+    <script>
+    $("#fontzoom img").each(function(){
+        var img = $(this);
+        var imgInt = setInterval( function(){
+            if (img.width() > 0) {
+                clearInterval(imgInt);
+                if (img.width() > 600) {
+                    img.css({cursor:"pointer",height:"auto",width:"600px"}).click(function(){
+                        window.open(img.attr('src'), "_blank")
+                    });
+                }
+                img.show();
+            }
+        }, 50);
+        img.hide();
+    });
+    $("#fontzoom img").parents("p").css("text-indent",0);
+
+    $(".J_font_zoom a").click(function(){
+        if (this.className == "small") {
+            var fontSize = parseInt($('.conTxt').css('font-size')) || 14;
+            if (fontSize > 14) {
+                $('.conTxt').css('font-size', (fontSize - 1) + 'px');
+            }
+        } else if (this.className == "big") {
+            var fontSize = parseInt($('.conTxt').css('font-size')) || 14;
+            if (fontSize < 20) {
+                $('.conTxt').css('font-size', (fontSize + 1) + 'px');
+            }
+        }
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿{PE.DataSource id="core" datasource="友情链接地址" xslt="true" itemId="@RequestInt_id" span="" class="" /}
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta content="{PE.Label id='取得META信息' siteConfig='true' metaType='keywords' /}" name="keywords">
+    <meta content="{PE.Label id='取得META信息' siteConfig='true' metaType='description' /}" name="description">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>{PE.SiteConfig.SiteTitle/}</title>
+</head>
+<body>
+
+    <iframe src="{PE.SiteConfig.ApplicationPath/}Common/GetHits.aspx?id={PE.Field id="core" fieldname="ItemId" /}" style="display:none;"></iframe>
+    正在跳转...
+    <script>window.location ="{PE.Field id="core" fieldname="SiteUrl" /}";</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿@charset "utf-8";
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; }
+h1, h2, h3, h4, h5, h6 { font-weight: normal; font-size: 100%; }
+html { line-height: 1; }
+ol, ul { list-style: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
+q, blockquote { quotes: none; }
+q:before, q:after, blockquote:before, blockquote:after { content: ""; content: none; }
+a img { border: none; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary { display: block; }
+a { text-decoration: none; color: #444444; }
+a:hover { text-decoration: underline; color: #11437d; }
+.fl { float: left; display: inline; }
+.fr { float: right; display: inline; }
+.hide { display: none; }
+.mt10 { margin-top: 10px; }
+.mb10 { margin-bottom: 10px; }
+.mt20 { margin-top: 20px; }
+.mb20 { margin-bottom: 20px; }
+.clear { clear: both; *height: 0; *font-size: 0; *line-height: 0; }
+.clearfix { *zoom: 1; }
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+
+
+#content{ background:#fff; width: 1000px; margin: 10px auto;  }
+/* 问卷调查默认模板 ---------------------------------------------- */
+.surveyTable{ border:1px solid #d8d8d8;  }
+.surveyTable .submitTd{ text-align:center; padding:10px 0;  }
+.surveyTable .submitTd input,
+.inputbutton { display:inline-block; *display:inline; zoom:1; cursor:pointer; width:74px; height:25px; }
+#BtnReturn { display: none; }
+
+#SurveyBox #SurveyTitle{ background:#f5f5f5; padding:5px 0; margin-bottom:20px;  font:bold 16px/200% "Microsoft YaHei"; _font-weight:bold;  }
+#SurveyBox dt,#SurveyBox dd{ margin:0 60px;  }
+#SurveyBox dt{ font-size:14px; font-weight:bold; border-bottom:1px dotted #ddd; padding:10px 0;   }
+#SurveyBox dd{ padding:15px 0 0 20px; line-height:24px;   }
+#SurveyBox dd input{ margin-right:3px; vertical-align:middle;  }
+
+/* 问卷调查-列表页 ---------------------------------------------- */
+.reportList{ padding:20px ;  }
+.reportList li{ font-size:14px;  }
+.reportList .view,.reportList .join{ color:#f60; font-size:12px;  }
+
+
+/* 默认问卷调查列表页模板 ---------------------------------------------- */
+.surveyResult table{ border:1px solid #d8d8d8; width:100%;  text-align:center;  }
+.surveyResult table td{ border:0 !important; background:#fff !important;  }
+.surveyResult table .tdbg td #LblSurveyName,.surveyQA #LblTitle{ display:block; background:#f5f5f5; padding:5px 0; color:#333 !important;  margin-bottom:20px;  font:bold 16px/200% "Microsoft YaHei"; _font-weight:bold;   text-align: center;}
+.surveyResult table table{ border:0;  }
+.surveyResult #DivShowData{ text-align:center;  }
+.surveyResult #DivShowData span{ display:block; padding-top:20px;  font-size:14px;  }
+
+
+/*  ---------------------------------------------- */
+.surveyQA table{ border:1px solid #d8d8d8; width:100% !important;  }
+.surveyQA table td{ text-align:left;  }
+.surveyQA table table{ border:0;  }
+.surveyQA table table td{ padding:10px 20px; border-bottom:1px dotted #d8d8d8;   }
+.surveyQA table td div{ padding-bottom:20px;  }

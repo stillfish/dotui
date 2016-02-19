@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content='{PE.Label id="取得META信息" siteConfig="true" metaType="keywords" /}'
+        name="Keywords" />
+    <meta content='{PE.Label id="取得META信息" siteConfig="true" metaType="description" /}'
+        name="Description" />
+    <title>会员中心-{PE.Control.PageTitle/}</title>
+    <link href="{PE.SiteConfig.SkinPath/}user/default.css" rel="stylesheet" type="text/css" />
+    <link href="{PE.SiteConfig.SkinPath/}user/model.css" rel="stylesheet" type="text/css" />
+    {PE.Label ID="公共脚本"/}
+</head>
+<body>
+    <div class="wrapper">
+        <!--网站内容开始-->
+        <div class="user_main_all">
+            {PE.Label ID="会员中心顶部"/}
+            <!--会员主体定义开始-->
+            <div class="user_main">
+                {PE.Label ID="会员中心边侧栏"/}
+                <!--右侧定义框架开始 -->
+                <div class="user_summary">
+                    <!--您现在的位置是-->
+                    <div class="user_sitepath">
+                        您现在的位置：{PE.Control.YourPosition/}</div>
+                    <!--您现在的位置是-->
+                    <!--信息列表开始-->
+                    {PE.Control.MainForm}
+                    <div class="model_info_list">
+                        <div class="model_info_sate mtop10">
+                            <ul>
+                                <li id="TabTitle0"><span><a href="###" onclick="ShowTabs(0)">{PE.Control.Literal1/}
+                                </a></span></li>
+                                <li id="TabTitle1"><span><a href="###" onclick="ShowTabs(1)">{PE.Control.Literal2/}
+                                </a></span></li>
+                                <li id="TabTitle2"><span><a href="###" onclick="ShowTabs(2)">{PE.Control.Literal3/}
+                                </a></span></li>
+                            </ul>
+                        </div>
+                        {PE.Control.HdnTabId/}
+                        <div class="model_info_content">
+                            {PE.Control.userMessageList/}
+                        </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div class="model_list_manage">
+                        <div class="search_box">
+                            {PE.Control.operate/}</div>
+                    </div>
+                    <div class="model_list_manage">
+                        <div class="search_box">
+                            <strong>{PE.Control.Localize1/} </strong> {PE.Control.DropSearch/}
+                           {PE.Control.TxtKeyword/} {PE.Control.ValrKeyword}{PE.Control.Localize3/}{/PE.Control.ValrKeyword} {PE.Control.BtnSubmit/}
+                        </div>
+                    </div>
+                    {PE.Control.javascript/} {/PE.Control.MainForm}
+                    <!--模型列表管理结束-->
+                    <!--信息列表结束-->
+                </div>
+                <!--右侧定义框架结束 -->
+                <div class="clear">
+                </div>
+            </div>
+            <!--会员主体定义结束-->
+        </div>
+    </div>
+    {PE.Label ID="会员中心底部"/}
+</body>
+</html>

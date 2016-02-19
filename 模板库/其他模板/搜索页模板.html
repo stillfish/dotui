@@ -1,0 +1,45 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta content="{PE.Label id='取得META信息' siteConfig='true' metaType='keywords' /}" name="Keywords" />
+    <meta content="{PE.Label id='取得META信息' siteConfig='true' metaType='description' /}" name="Description"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>搜索结果 - {PE.SiteConfig.SiteTitle/}</title>
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}module.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}default.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}page.css">
+    {PE.Label id="公共脚本" /}
+</head>
+<body>
+
+    {PE.Label id="网站顶部" /}
+
+    <div id="content">
+        <div class="listContent">
+            <div class="mainContent">
+                <div class="cateHead">
+                    <h3 class="cateName">搜索结果</h3>
+                    <div class="path">{PE.Label id="位置导航" /}&gt;<span>搜索结果</span></div>
+                </div>
+                <ul class="pageList infoList">
+                    {PE.Label id="全站搜索按标题" titleLength="50" outputQty="20" usePage="true" keyword="@Request_keyword" /}
+                </ul>
+                <div class="page">{PE.Page id="url_方块样式分页" datasource="全站搜索按标题_普通式" unitname="篇文章"/}</div>
+            </div>
+            <!-- mainContent e -->
+
+            <div class="side">
+                {PE.Label id="侧栏-热门排行" /}
+            </div>
+            <!-- side e -->
+        </div>
+        <!-- listContent e -->
+    </div>
+    <!-- content e -->
+
+    {PE.Label id="网站底部" /}
+
+</body>
+</html>

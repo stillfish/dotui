@@ -1,0 +1,73 @@
+﻿{PE.DataSource id="cone" datasource="留言_内容页" itemId="@RequestInt_id" xslt="true" /}
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta content="{PE.Field id='cone' fieldname='Keyword' /}" name="keywords">
+    <meta content="{PE.Field id='cone' fieldname='Intro' /}" name="description">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>{PE.Field id="cone" fieldname="Title" /} - {PE.SiteConfig.SiteTitle/}</title>
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}module.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}default.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}page.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}commentary.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}msg.css">
+    {PE.Label id="公共脚本" /}
+</head>
+<body>
+
+    {PE.Label id="网站顶部" currentId="{PE.Field id="cone" fieldname="NodeID" /}" /}
+
+    <div id="content">
+        <div class="showContent">
+            <div class="mainContent">
+                <div class="cateHead">
+                    <h3 class="cateName">{PE.Label id="取得节点名称" nodeId="{PE.Field id="cone" fieldname="NodeID" /}" /}</h3>
+                    <div class="path">{PE.Label id="位置导航" currentId="{PE.Field id="cone" fieldname="NodeID" /}" /}</div>
+                </div>
+
+                <!-- 内容区 S -->
+                <div class="msgDetial">
+                    <h3 class="hd"><span>[阅读数：{PE.Field id="cone" fieldname="Hits" /}]</span>主题：{PE.Field id="cone" fieldname="Title" /}</h3>
+                    <div class="bd">
+                        <div class="img">
+                            <img src={PE.field id="cone" fieldname="GuestImages" /} alt="用户头像" />
+                            <br />【{PE.field id="cone" fieldname="GuestNameType" /}】
+                            <br />{PE.field id="cone" fieldname="GuestName" /}
+                        </div>
+                        <div class="cont">
+                            <span class="fr">发表时间：{PE.field id="cone" fieldname="UpdateTime" /}
+                            {PE.field id="cone" fieldname="GuestHomepage" /} {PE.field id="cone" fieldname="GuestOicq" /}
+                            {PE.field id="cone" fieldname="GuestEmail" /}
+                            </span>
+                            <img src={PE.field id="cone" fieldname="GuestFace" /} alt="留言心情" />
+                            <div class="clearbox"></div>
+                            <div class="msgContHere">{PE.field id="cone" fieldname="GuestContent" /}</div>
+                            <div class="adminRep {PE.field id="cone" fieldname="AdminReplyOrNot" /}">
+                                {PE.field id="cone" fieldname="AdminReply" /}
+                                <p class="replyTime">{PE.field id="cone" fieldname="AdminReplyTime" /}</p>
+                            </div>
+                        </div>
+                    </div>
+                <!-- 内容区 E -->
+
+                <div id="commentform"></div>
+                {PE.Label id="评论标签" nodeId="{PE.Field id="cone" fieldname="NodeID" /}" /}
+            </div>
+            <!-- mainContent e -->
+
+            <div class="side">
+                {PE.Label id="侧栏-栏目菜单" currentId="{PE.Field id="cone" fieldname="NodeID" /}" /}
+                {PE.Label id="侧栏-热门排行" currentId="{PE.Field id="cone" fieldname="NodeID" /}" /}
+            </div>
+            <!-- side e -->
+        </div>
+        <!-- showContent e -->
+    </div>
+    <!-- content e -->
+
+    {PE.Label id="网站底部" /}
+
+</body>
+</html>

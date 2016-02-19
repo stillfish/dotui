@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>模块一览</title>
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}default.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}module.css">
+    <link rel="stylesheet" href="{PE.SiteConfig.SkinPath/}page-demo.css">
+    <script src="{PE.SiteConfig.ApplicationPath/}js/jquery.pack.js"></script>
+</head>
+<body>
+
+<div id="header">
+    <div class="siteWidth">
+        {PE.Label id="多级导航菜单" nodeid="0" depth="2" splitchar="0" outputQty="10" currentId=""/}
+    </div>
+</div>
+
+<div class="row siteWidth">
+    <div class="col">
+        <div class="mod">
+            <div class="mod-hd">
+                <h3 class="title">通用信息列表_普通式</h3>
+            </div>
+            <div class="mod-bd">
+                <ul class="infoList infoListA">
+                    {PE.Label id="通用信息列表" nodes="0" outputQty="10" split="0" titleLength="80" listOrderType="20" displayDateTime="mm-dd" /}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="mod">
+            <div class="mod-hd">
+                <h3 class="title">通用带图片的信息列表</h3>
+            </div>
+            <div class="mod-bd">
+                <ul class="picList">
+                    {PE.Label id="通用带图片的信息列表" nodes="0" outputQty="6" listOrderType="20" titleLength="18" picExist="true" imageWidth="120" imageHeight="90" /}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row siteWidth">
+    <div class="col">
+        <div class="mod">
+            <div class="mod-hd">
+                <h3 class="title">头条图文信息列表 带图片</h3>
+            </div>
+            <div class="mod-bd">
+                <ul class="topicList topicList-pic infoListA">
+                    {PE.Label id="头条图文信息列表" bindStyle="普通式" nodes="0" outputQty="7" topicNum="1" titleLength="80" displayDateTime="[mm-dd]" bindModel="1" listOrderType="20" picExist="false" topicDisplayPic="true" imageWidth="120" imageHeight="90" topicTitleLength="36" topicContentLength="130" /}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="mod">
+            <div class="mod-hd">
+                <h3 class="title">头条图文信息列表 无图片</h3>
+                <a href="{PE.Label id='取得节点链接路径' nodeId='1' /}" class="more">更多&gt;&gt;</a>
+            </div>
+            <div class="mod-bd">
+                <ul class="topicList infoListA">
+                    {PE.Label id="头条图文信息列表" bindStyle="普通式" nodes="0" outputQty="7" topicNum="1" titleLength="80" displayDateTime="[mm-dd]" bindModel="1" listOrderType="20" picExist="false" topicDisplayPic="false" topicTitleLength="80" topicContentLength="180" /}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row siteWidth">
+    <div class="col">
+        <div class="mod">
+            <div class="mod-hd">
+                <h3 class="title">通用信息列表_焦点图</h3>
+            </div>
+            <div class="mod-bd">
+                <div class="focusPic J_focusPic">
+                    {PE.Label id="通用信息列表" bindStyle="焦点图" titleLength="40" outputQty="5" nodes="0" listOrderType="20" optionalExtend="num" imageWidth="300" imageHeight="220" picExist="true"/}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="mod">
+            <div class="mod-hd">
+                <h3 class="title">通用信息列表_焦点图</h3>
+            </div>
+            <div class="mod-bd">
+                <div class="focusPic-picTitle J_focusPic">
+                    {PE.Label id="通用信息列表" bindStyle="焦点图" titleLength="40" outputQty="4" nodes="0" listOrderType="20" optionalExtend="picTitle" imageWidth="300" imageHeight="220" picExist="true"/}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row siteWidth">
+    <div class="mod">
+        <div class="mod-hd">
+            <h3 class="title">tab切换</h3>
+        </div>
+        <div class="mod-bd">
+            <div class="box J_tabBox">
+                <div class="hd">
+                    <ul class="tab J_tabHandler">
+                        <li class="on"><a href="">栏目1</a></li>
+                        <li><a href="">栏目2</a></li>
+                        <li><a href="">栏目3</a></li>
+                    </ul>
+                </div>
+                <div class="bd J_tabContent">
+                    <ul class="infoList infoListA infoList-col2">
+                        {PE.Label id="通用信息列表" nodes="0" outputQty="10" titleLength="50" listOrderType="20" displayDateTime="mm-dd" /}
+                    </ul>
+                    <ul class="infoList infoListA infoList-col2 hide">
+                        {PE.Label id="通用信息列表" nodes="0" outputQty="10" titleLength="50" listOrderType="20" displayDateTime="mm-dd" /}
+                    </ul>
+                    <ul class="infoList infoListA infoList-col2 hide">
+                        {PE.Label id="通用信息列表" nodes="0" outputQty="10" titleLength="50" listOrderType="20" displayDateTime="mm-dd" /}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="{PE.SiteConfig.SkinPath/}js/jquery.SuperSlide.js"></script>
+<script>
+    jQuery('.J_focusPic').slide({titCell:'.hd li',mainCell:'.bd ul',interTime:4000,autoPlay:true});
+    jQuery('.J_tabBox').slide({titCell:'.J_tabHandler>*',mainCell:'.J_tabContent'});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+﻿.votePage{ padding:40px; }
+.votePage .voteTitle{ font:normal normal 22px/200% "Microsoft YaHei",SimHei; text-align:center; color:#0E50A1; margin-bottom:15px; border-bottom:1px dotted #ccc; padding-bottom:15px; }
+.voteResultList{ padding:10px; zoom:1; }
+.voteResultList li{ line-height:18px; padding:5px 0; }
+.voteResultList li.last .row{ background:#fff; }
+.voteResultList li.last strong{ font-weight:bold; padding:0 5px; color:#f60; }
+.voteResultList span{ display:inline-block; *display:inline; zoom:1; vertical-align:top; }
+.voteResultList span.tit{ width: 250px; text-align:right; }
+.voteResultList span.row{ width:300px; margin:0 10px; height:12px; line-height:12px; overflow:hidden; background:#f4f4f4; }
+.voteResultList .row .rowCon { width:0px; display:block; background:#B7E373; border:1px solid #478F45; padding:1px; padding-bottom:0; }
+.voteResultList .row .rowCon i{ display:block; background:#5DBC5B; height:8px; overflow:hidden; }
+
+.votePost{ width:500px; margin:40px auto; }
+.votePost .title{ color: #d95701; font-weight:bold; font-size: 18px; }
+.votePost ul{ padding:20px 0; }
+.votePost li{ padding:5px 0; height:20px; line-height:20px; }
+.votePost li input{ vertical-align:middle; margin-right:5px; }
+.votePost p input{ width: 80px; text-align:center; overflow:hidden; margin:5px 10px 0 0; cursor:pointer; }

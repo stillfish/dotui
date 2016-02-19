@@ -1,0 +1,80 @@
+﻿{PE.DataSource id="cone" datasource="文章_内容页" itemId="@RequestInt_id" xslt="true" /}
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta content="{PE.Field id="cone" fieldname="Keyword" /}" name="keywords">
+    <meta content="{PE.Field id="cone" fieldname="Intro" /}" name="description">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>{PE.Field id="cone" fieldname="Title" /} - {PE.SiteConfig.SiteTitle/}</title>
+    <style>
+    html{ background: none; }
+    body { font-size: 14px; line-height: 24px; color: #333; background-color: #efefef; font-family: "Microsoft Yahei"; }
+    a { text-decoration: none; color: #333; }
+    h1, h2, h3, h4, h5, h6 { font-weight: normal; font-size: 100%; margin: 0; padding: 0; border: 0; }
+    #articlePrint { margin: 0 auto; background: #fff; margin: 0 auto; width: 860px; padding: 40px; overflow: hidden; }
+    #articlePrint h1 { text-align: left; margin-bottom: 20px; }
+    #articlePrint .articlePrintIn { min-height: 600px; }
+    #articlePrint .articlePrintIn .title { text-align: center; font: normal 30px/1.5em "Microsoft YaHei",SimHei; }
+    #articlePrint .articlePrintIn .subTitle { border-bottom: 3px double #ddd; font-size: 16px; padding: 1em 0; text-align: center; }
+    #articlePrint .property { padding-bottom:10px; }
+    #articlePrint .fun { text-align: center; background: #f4f4f4; height: 30px; line-height: 30px; }
+    #articlePrint .fun * { vertical-align: middle; }
+    #articlePrint .fun a { margin: 0 10px; }
+    #articlePrint .fun a:hover { text-decoration: none; }
+    #articlePrint .fun img { margin: 0 5px; }
+    .articleCon .conTxt { padding-top: 40px; }
+    </style>
+    <style media="print">#articlePrint .fun{ display: none; }</style>
+</head>
+<body>
+
+    <div id="articlePrint">
+        <div class="articlePrintIn">
+
+            <h1 title="{PE.SiteConfig.SiteName /}" id="logo"><a href="{PE.SiteConfig.ApplicationPath /}"><img src="{PE.SiteConfig.Logo/}" /></a></h1>
+
+            <!-- 正文内容 S -->
+            <div class="articleCon">
+                <!-- 标题 -->
+                <h2 class="title">{PE.Field id="cone" fieldname="Title" /}</h2>
+                <h4 class="subTitle">{PE.Field id="cone" fieldname="Subheading" /}</h4>
+
+                <!-- 正文 -->
+                <div class="conTxt">
+                    <div id="fontzoom">
+                        {PE.Field id="cone" fieldname="ContentAll" charge="true" showerr="true" /}
+                    </div>
+                </div>
+
+                <div class="fun">
+                    <a href="javascript:window.print()"><img src="{PE.SiteConfig.applicationpath/}Images/printpage.gif" alt="打印本文" border="0"/>打印本文</a>
+                    <a href="javascript:window.close()"><img src="{PE.SiteConfig.applicationpath/}Images/pageclose.gif" alt="关闭窗口" border="0"/>关闭窗口</a>
+                </div>
+
+            </div>
+            <!-- 正文内容 E -->
+        </div>
+    </div>
+
+    <script src="{PE.SiteConfig.ApplicationPath/}js/jquery.pack.js"></script>
+    <script>
+    $("#fontzoom img").each(function(){
+        var img = $(this);
+        var imgInt = setInterval( function(){
+            if (img.width() > 0) {
+                clearInterval(imgInt);
+                if (img.width() > 600) {
+                    img.css({height:"auto",width:"750px"});
+                }
+                img.show();
+            }
+        }, 50);
+        img.hide();
+    });
+    $("#fontzoom img").parents("p").css("text-indent",0);
+    </script>
+
+</body>
+</html>
